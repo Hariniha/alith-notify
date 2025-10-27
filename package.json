@@ -1,0 +1,40 @@
+{
+  "name": "alith-notify",
+  "version": "1.0.0",
+  "description": "AI-powered log monitoring tool that analyzes errors and displays intelligent summaries in the console",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "alith-notify": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js --config ./alith.config.json",
+    "dev": "node --watch bin/cli.js --config ./alith.config.json"
+  },
+  "keywords": [
+    "log-monitoring",
+    "error-tracking",
+    "ai-analysis",
+    "alith",
+    "cli",
+    "console",
+    "gpt-4",
+    "error-analyzer"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "alith": "^0.12.3",
+    "dotenv": "^17.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/alith-notify.git"
+  },
+  "devDependencies": {
+    "@types/json-schema": "^7.0.15"
+  }
+}

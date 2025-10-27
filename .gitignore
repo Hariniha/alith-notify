@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Config files with sensitive data
+alith.config.json
+*.config.json
+
+# Log files
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build output
+dist/
+build/
+
+# Test coverage
+coverage/
+
+# Temporary files
+.tmp/
+temp/
