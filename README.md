@@ -1,16 +1,18 @@
 # Alith Notify
 
-> AI-powered log monitoring tool that watches your log files and provides intelligent error analysis directly in your console.
+> Capture terminal errors, summarize with AI, and automatically send to GitHub Copilot for fixing.
 
 ## What It Does
 
-**Alith Notify** continuously monitors your log files and uses AI (via Alith Agent SDK with GPT-4) to:
-- 🔍 Detect new errors automatically
-- 🤖 Analyze them with artificial intelligence
-- 📊 Display beautiful summaries in your console
-- 💡 Suggest root causes and solutions
+**Alith Notify** captures errors from your terminal and uses AI to help you fix them:
 
-No webhooks, no external services - just smart error analysis in your terminal.
+1. 🔍 **Captures** all terminal errors automatically (stderr, console.error, exceptions)
+2. 📝 **Logs** them to a file for review
+3. 🤖 **Summarizes** using AI (Alith Agent SDK with GPT-4)
+4. 🚀 **Auto-sends** to GitHub Copilot Chat (no copy/paste!)
+5. 🔧 **Copilot fixes** the issues with AI-powered suggestions
+
+No manual work - just automatic error capture and AI-powered fixes!
 
 ---
 
@@ -41,21 +43,17 @@ For Unix/Mac:
 export OPENAI_API_KEY="sk-your-openai-api-key-here"
 ```
 
-### 3. Configure
-Edit `alith.config.json`:
-```json
-{
-  "logFile": "./server.log",
-  "interval": 30
-}
-```
-
-### 4. Run
+### 3. Run the Capture System
 ```bash
 npm start
 ```
 
-That's it! The tool will monitor your log file and display AI-powered analysis when errors are detected.
+### 4. Generate Errors (in another terminal)
+```bash
+npm run test:errors
+```
+
+That's it! The system will capture errors, summarize them, and generate prompts for Copilot.
 
 ---
 
@@ -98,11 +96,13 @@ For detailed usage examples, see `USAGE.md`
 ## Features
 
 ✅ Real-time log monitoring  
-✅ AI-powered error analysis (GPT-4)  
+✅ **AI-powered error fixing** (GPT-4)  
 ✅ Beautiful console output with color-coding  
-✅ Root cause analysis and solutions  
+✅ **Root cause analysis and specific fixes**  
+✅ **Confidence ratings** for each suggested fix  
 ✅ File rotation support  
 ✅ Zero external dependencies (no webhooks)  
+✅ Brief, actionable fix descriptions  
 
 ---
 
@@ -110,14 +110,15 @@ For detailed usage examples, see `USAGE.md`
 
 1. Watcher monitors your log file every N seconds
 2. New errors are sent to Alith Agent (GPT-4)
-3. AI analyzes and generates actionable summary
-4. Beautiful output displays in your console
+3. **AI analyzes errors and suggests specific fixes**
+4. **Each fix includes: error, root cause, solution, and confidence level**
+5. Beautiful output displays in your console with brief fix descriptions
 
 ---
 
 ## Customization
 
-**Change AI Model** - Edit `src/summarizer.js`:
+**Change AI Model** - Edit `src/fixer.js`:
 ```javascript
 model: 'gpt-3.5-turbo'  // Faster, cheaper option
 ```
@@ -127,9 +128,9 @@ model: 'gpt-3.5-turbo'  // Faster, cheaper option
 { "interval": 60 }  // Check every 60 seconds
 ```
 
-**Custom AI Instructions** - Edit `preamble` in `src/summarizer.js`
+**Custom AI Instructions** - Edit `preamble` in `src/fixer.js`
 
-For more examples, see `USAGE.md`
+For more examples, see `USAGE.md` and `ERROR-FIXING-MODE.md`
 
 ---
 

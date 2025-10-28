@@ -1,15 +1,16 @@
 {
   "name": "alith-notify",
-  "version": "1.0.0",
-  "description": "AI-powered log monitoring tool that analyzes errors and displays intelligent summaries in the console",
+  "version": "2.0.0",
+  "description": "Capture terminal errors, summarize with AI, and send to GitHub Copilot for automatic fixing",
   "type": "module",
   "main": "src/index.js",
   "bin": {
-    "alith-notify": "./bin/cli.js"
+    "alith-notify": "./bin/cli-capture.js"
   },
   "scripts": {
-    "start": "node bin/cli.js --config ./alith.config.json",
-    "dev": "node --watch bin/cli.js --config ./alith.config.json"
+    "start": "node bin/cli-capture.js",
+    "dev": "node --watch bin/cli-capture.js",
+    "test:errors": "node test/generate-errors.js"
   },
   "keywords": [
     "log-monitoring",

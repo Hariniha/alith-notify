@@ -1,8 +1,10 @@
 /**
  * Alith Notify - Main entry point
- * Monitor log files and display AI-powered error analysis
+ * Capture terminal errors, summarize with AI, and send to Copilot for fixing
  */
 
 export { loadConfig, createDefaultConfig } from './config.js';
-export { LogWatcher, createWatcher } from './watcher.js';
 export { Summarizer, createSummarizer } from './summarizer.js';
+export { ErrorCapture, createErrorCapture } from './error-capture.js';
+export { ErrorOrchestrator, createOrchestrator } from './orchestrator.js';
+export { CopilotIntegration, createCopilotIntegration } from './copilot-integration.js';

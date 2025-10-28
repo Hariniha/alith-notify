@@ -17,7 +17,7 @@ export class Summarizer {
     
     // Initialize Alith Agent with API key
     this.agent = new Agent({
-      model: options.model || 'gpt-4',
+      model: options.model || 'gpt-4o-mini',
       apiKey: apiKey,
       preamble: options.preamble || 
         'You are an expert log analyzer. Your task is to analyze error logs and provide concise, actionable summaries. Focus on: 1) What went wrong, 2) Potential causes, 3) Recommended actions. Be specific and technical.'
